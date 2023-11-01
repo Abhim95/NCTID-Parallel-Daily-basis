@@ -19,7 +19,7 @@ describe("Fetching data from API and storing it in batch wise and checking eleme
 
     cy.task(
       "queryDB",
-      "SELECT post_title FROM bscience_posts INNER JOIN bscience_postmeta ON bscience_posts.ID = bscience_postmeta.post_id WHERE bscience_postmeta.meta_key = 'trial_status_change';"
+      "SELECT post_title FROM bscience_posts INNER JOIN bscience_postmeta ON bscience_posts.ID = bscience_postmeta.post_id WHERE bscience_postmeta.meta_key = 'trial_status_change' AND bscience_postmeta.meta_value = '2023-10-31';"
     ).then((result2) => {
       console.log("result", result2);
 
